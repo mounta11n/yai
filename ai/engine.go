@@ -51,7 +51,7 @@ func NewEngine(mode EngineMode, config *config.Config) (*Engine, error) {
 	if config.GetAiConfig().GetBaseUrl() != "" {
 		clientConfig.BaseURL = config.GetAiConfig().GetBaseUrl()
 	}
-	
+
 	client := openai.NewClientWithConfig(clientConfig)
 	return &Engine{
 		mode:         mode,

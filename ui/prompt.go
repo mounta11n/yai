@@ -96,11 +96,11 @@ func (p *Prompt) AsString() string {
 func getPromptStyle(mode PromptMode) lipgloss.Style {
 	switch mode {
 	case ExecPromptMode:
-		return lipgloss.NewStyle().Foreground(lipgloss.Color(exec_color))
+		return lipgloss.NewStyle().Foreground(lipgloss.Color(exec_color)).Background(lipgloss.Color(background))
 	case ConfigPromptMode:
-		return lipgloss.NewStyle().Foreground(lipgloss.Color(config_color))
+		return lipgloss.NewStyle().Foreground(lipgloss.Color(config_color)).Background(lipgloss.Color(background))
 	default:
-		return lipgloss.NewStyle().Foreground(lipgloss.Color(chat_color))
+		return lipgloss.NewStyle().Foreground(lipgloss.Color(chat_color)).Background(lipgloss.Color(background))
 	}
 }
 

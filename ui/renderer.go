@@ -6,13 +6,14 @@ import (
 )
 
 const (
-	exec_color    = "#ffa657"
-	config_color  = "#ffffff"
-	chat_color    = "#66b3ff"
-	help_color    = "#aaaaaa"
-	error_color   = "#cc3333"
-	warning_color = "#ffcc00"
-	success_color = "#46b946"
+	background    = "#262427"
+	exec_color    = "#FFCA58"
+	config_color  = "#FCFCFA"
+	chat_color    = "#AEE8F4"
+	help_color    = "#A093E2"
+	error_color   = "#FF7272"
+	warning_color = "#FC9867"
+	success_color = "#BCDF59"
 )
 
 type Renderer struct {
@@ -29,10 +30,10 @@ func NewRenderer(options ...glamour.TermRendererOption) *Renderer {
 		return nil
 	}
 
-	successRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(success_color))
-	warningRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(warning_color))
-	errorRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(error_color))
-	helpRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(help_color)).Italic(true)
+	successRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(success_color)).Background(lipgloss.Color(background))
+	warningRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(warning_color)).Background(lipgloss.Color(background))
+	errorRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(error_color)).Background(lipgloss.Color(background))
+	helpRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(help_color)).Italic(true).Background(lipgloss.Color(background))
 
 	return &Renderer{
 		contentRenderer: contentRenderer,

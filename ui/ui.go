@@ -72,7 +72,7 @@ func NewUi(input *UiInput) *Ui {
 		components: UiComponents{
 			prompt: NewPrompt(input.GetPromptMode()),
 			renderer: NewRenderer(
-				glamour.WithAutoStyle(),
+				glamour.WithStylesFromJSONFile("ui/theme.json"),
 				glamour.WithWordWrap(150),
 			),
 			spinner: NewSpinner(),
@@ -130,7 +130,7 @@ func (u *Ui) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		u.dimensions.width = msg.Width
 		u.dimensions.height = msg.Height
 		u.components.renderer = NewRenderer(
-			glamour.WithAutoStyle(),
+			glamour.WithStylesFromJSONFile("ui/theme.json"),
 			glamour.WithWordWrap(u.dimensions.width),
 		)
 	// keyboard
