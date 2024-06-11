@@ -10,11 +10,12 @@
 
 ## What is Yai ?
 
-`Yai` (your AI) is an assistant for your terminal, using [OpenAI ChatGPT](https://chat.openai.com/) to build and run commands for you. You just need to describe them in your everyday language, it will take care or the rest. 
+`Yai` (your AI) is an assistant for your terminal, using [OpenAI ChatGPT](https://chat.openai.com/) to build and run commands for you. You just need to describe them in your everyday language, it will take care or the rest.
 
 You have any questions on random topics in mind? You can also ask `Yai`, and get the power of AI without leaving `/home`.
 
 It is already aware of your:
+
 - operating system & distribution
 - username, shell & home directory
 - preferred editor
@@ -24,6 +25,26 @@ And you can also give any supplementary preferences to fine tune your experience
 ## Documentation
 
 A complete documentation is available at [https://ekkinox.github.io/yai/](https://ekkinox.github.io/yai/).
+
+## Build
+
+To build `Yai`, simply run:
+
+```shell
+make build
+```
+
+To install the local build, simply run:
+
+```shell
+make install
+```
+
+To uninstall the local build and remove the configuration, simply run:
+
+```shell
+make uninstall
+```
 
 ## Quick start
 
