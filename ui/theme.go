@@ -1,3 +1,7 @@
+package ui
+
+func GetTheme() []byte {
+	return []byte(`
 {
   "document": {
     "block_prefix": "\n",
@@ -190,4 +194,6 @@
   },
   "html_block": {},
   "html_span": {}
+}
+		`)
 }
