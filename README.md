@@ -10,7 +10,7 @@
 
 ## What is Yai ?
 
-`Yai` (your AI) is an assistant for your terminal, using [OpenAI ChatGPT](https://chat.openai.com/) to build and run commands for you. You just need to describe them in your everyday language, it will take care or the rest.
+`Yai` (your AI) is an assistant for your terminal, using OpenAI compatible APIs to build and run commands for you. You just need to describe them in your everyday language, it will take care or the rest.
 
 You have any questions on random topics in mind? You can also ask `Yai`, and get the power of AI without leaving `/home`.
 
@@ -46,17 +46,22 @@ To uninstall the local build and remove the configuration, simply run:
 make uninstall
 ```
 
-## Quick start
+## Configuration
 
-To install `Yai`, simply run:
+Create `~/.config/yai.json`, with the following structure:
 
-```shell
-curl -sS https://raw.githubusercontent.com/ekkinox/yai/main/install.sh | bash
+```json
+{
+  "openai_base_url": "https://api.openai.com/v1", // OpenAI compatible API URL
+  "openai_key": "sk-xxxxxxxxx", // API key (mandatory)
+  "openai_model": "gpt-3.5-turbo", // AI model (default gpt-3.5-turbo)
+  "openai_proxy": "", // OpenAI API proxy (default disabled)
+  "openai_temperature": 0.2, // OpenAI API temperature (defaut 0.2)
+  "openai_max_tokens": 1000, // OpenAI API max tokens (default 1000)
+  "user_default_prompt_mode": "exec", // user prefered prompt mode: "exec" (default) or "chat"
+  "user_preferences": "" // user preferences, expressed in natural language (default none)
+}
 ```
-
-At first run, it will ask you for an [OpenAI API key](https://platform.openai.com/account/api-keys), and use it to create the configuration file in `~/.config/yai.json`.
-
-See [documentation](https://ekkinox.github.io/yai/getting-started/#configuration) for more information.
 
 ## Thanks
 
