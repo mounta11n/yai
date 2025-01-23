@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOOWNER="ekkinox"
+REPOOWNER="mounta11n"
 REPONAME="yai"
 RELEASETAG=$(curl -s "https://api.github.com/repos/$REPOOWNER/$REPONAME/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 

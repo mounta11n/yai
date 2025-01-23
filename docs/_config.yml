@@ -1,14 +1,14 @@
-title: 🚀 Yai 💬
+title: Yai
 title_separator: "|"
-email: ekkinox@gmail.com
-repository: "ekkinox/yai"
+email: noknok@gmail.com
+repository: "mounta11n/yai"
 description: >-
-  Yai (your AI) is an artificial intelligence powered terminal assistant. 
-  Use it to prepare and execute any command lines from requests expressed in your natural language. 
-  You can also engage in conversation with it about any topics you may think about.
-  Unleash the power of AI with the comfort of staying at /home !
+  Yai ("Your AI") ist ein Terminal-Assistent mit künstlicher Intelligenz.
+ Mit ihm kannst du beliebige Befehlszeilen aus Anfragen vorbereiten und ausführen, die du in deiner natürlichen Sprache formulierst.
+ Du kannst dich auch mit ihm über alle Themen unterhalten, die dir in den Sinn kommen.
+ Entfessle die Macht der KI mit dem Komfort, zu Hause zu bleiben!
 twitter_username: noxekki
-github_username: ekkinox
+github_username: mounta11n
 minimal_mistakes_skin: dark
 search: false
 markdown: kramdown
@@ -35,7 +35,7 @@ author:
       url: "https://twitter.com/noxekki"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/ekkinox"
+      url: "https://github.com/mounta11n"
 
 footer:
   links:
@@ -44,7 +44,7 @@ footer:
       url: "https://twitter.com/noxekki"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/ekkinox"
+      url: "https://github.com/mounta11n"
 
 defaults:
   - scope:

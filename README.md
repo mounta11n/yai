@@ -1,8 +1,8 @@
 # 🚀 Yai 💬 - AI powered terminal assistant
 
-[![build](https://github.com/ekkinox/yai/actions/workflows/build.yml/badge.svg)](https://github.com/ekkinox/yai/actions/workflows/build.yml)
-[![release](https://github.com/ekkinox/yai/actions/workflows/release.yml/badge.svg)](https://github.com/ekkinox/yai/actions/workflows/release.yml)
-[![doc](https://github.com/ekkinox/yai/actions/workflows/doc.yml/badge.svg)](https://github.com/ekkinox/yai/actions/workflows/doc.yml)
+[![build](https://github.com/mounta11n/yai/actions/workflows/build.yml/badge.svg)](https://github.com/mounta11n/yai/actions/workflows/build.yml)
+[![release](https://github.com/mounta11n/yai/actions/workflows/release.yml/badge.svg)](https://github.com/mounta11n/yai/actions/workflows/release.yml)
+[![doc](https://github.com/mounta11n/yai/actions/workflows/doc.yml/badge.svg)](https://github.com/mounta11n/yai/actions/workflows/doc.yml)
 
 > Unleash the power of artificial intelligence to streamline your command line experience.
 
@@ -24,7 +24,7 @@ And you can also give any supplementary preferences to fine tune your experience
 
 ## Documentation
 
-A complete documentation is available at [https://ekkinox.github.io/yai/](https://ekkinox.github.io/yai/).
+A complete documentation is available at [https://mounta11n.github.io/yai/](https://mounta11n.github.io/yai/).
 
 ## Build
 

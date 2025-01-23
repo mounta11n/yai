@@ -6,7 +6,7 @@ import (
 
 	"github.com/sashabaranov/go-openai"
 
-	"github.com/ekkinox/yai/system"
+	"github.com/mounta11n/yai/system"
 	"github.com/spf13/viper"
 )
 
