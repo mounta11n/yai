@@ -4,3 +4,6 @@ debug.log
 *-yai
 dist/
 docs/Gemfile.lock
+docs/_assets/renderer-orig.go
+docs/_assets/ui-orig.go
+yai
