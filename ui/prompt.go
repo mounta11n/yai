@@ -9,12 +9,12 @@ import (
 )
 
 const (
-	exec_icon          = "🚀 > "
-	exec_placeholder   = "Execute something..."
-	config_icon        = "🔒 > "
-	config_placeholder = "Enter your OpenAI key..."
-	chat_icon          = "💬 > "
-	chat_placeholder   = "Ask me something..."
+	exec_icon          = " >_ "
+	exec_placeholder   = "Führe einen Befehl aus"
+	config_icon        = " ? "
+	config_placeholder = "Gib deinen API Schlüssel ein"
+	chat_icon          = " … "
+	chat_placeholder   = "Was möchtest du wissen?"
 )
 
 type Prompt struct {

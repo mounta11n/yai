@@ -6,14 +6,14 @@ import (
 )
 
 const (
-	background    = "#262427"
-	exec_color    = "#FFCA58"
-	config_color  = "#FCFCFA"
-	chat_color    = "#AEE8F4"
-	help_color    = "#A093E2"
-	error_color   = "#FF7272"
-	warning_color = "#FC9867"
-	success_color = "#BCDF59"
+	background    = "#282C34"
+	exec_color    = "#FFFF00"
+	config_color  = "#00D7FF"
+	chat_color    = "#55FF00"
+	help_color    = "#AAAAFF"
+	error_color   = "#FF0000"
+	warning_color = "#FFAA00"
+	success_color = "#55AA00"
 )
 
 type Renderer struct {
@@ -67,22 +67,21 @@ func (r *Renderer) RenderHelp(in string) string {
 }
 
 func (r *Renderer) RenderConfigMessage() string {
-	welcome := "Welcome! 👋  \n\n"
-	welcome += "I cannot find a configuration file, please enter an `OpenAI API key` "
-	welcome += "from https://platform.openai.com/account/api-keys so I can generate it for you."
+	welcome := "Hallo!  \n\n"
+	welcome += "Es konnte keine Konfigurationsdatei gefunden werden, bitte gib einen API Schlüssel ein"
 
 	return welcome
 }
 
 func (r *Renderer) RenderHelpMessage() string {
-	help := "**Help**\n"
-	help += "- `↑`/`↓` : navigate in history\n"
-	help += "- `tab`   : switch between `🚀 exec` and `💬 chat` prompt modes\n"
-	help += "- `ctrl+h`: show help\n"
-	help += "- `ctrl+s`: edit settings\n"
-	help += "- `ctrl+r`: clear terminal and reset discussion history\n"
-	help += "- `ctrl+l`: clear terminal but keep discussion history\n"
-	help += "- `ctrl+c`: exit or interrupt command execution\n"
+	help := "**Tastenkombinationen**\n"
+	help += "- `↑`/`↓` : In History navigieren\n"
+	help += "- `Tab`   : Modus wechseln zwischen `Exec` & `Chat`\n"
+	help += "- `Strg+h`: Hilfe anzeigen\n"
+	help += "- `Strg+s`: Einstellungen\n"
+	help += "- `Strg+r`: Terminal löschen und Diskussionsverlauf zurücksetzen\n"
+	help += "- `Strg+l`: Terminal löschen, aber Diskussionsverlauf beibehalten\n"
+	help += "- `Strg+c`: Beende oder unterbreche Befehl\n"
 
 	return help
 }

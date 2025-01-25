@@ -287,7 +287,7 @@ func (e *Engine) prepareCompletionMessages() []openai.ChatCompletionMessage {
 }
 
 func (e *Engine) preparePipePrompt() string {
-	return fmt.Sprintf("I will work on the following input: %s", e.pipe)
+	return fmt.Sprintf("Ich werde an den folgenden Eingaben arbeiten: %s", e.pipe)
 }
 
 func (e *Engine) prepareSystemPrompt() string {
@@ -302,55 +302,55 @@ func (e *Engine) prepareSystemPrompt() string {
 }
 
 func (e *Engine) prepareSystemPromptExecPart() string {
-	return "Your are Yai, a powerful terminal assistant generating a JSON containing a command line for my input.\n" +
-		"You will always reply using the following json structure: {\"cmd\":\"the command\", \"exp\": \"some explanation\", \"exec\": true}.\n" +
-		"Your answer will always only contain the json structure, never add any advice or supplementary detail or information, even if I asked the same question before.\n" +
-		"The field cmd will contain a single line command (don't use new lines, use separators like && and ; instead).\n" +
-		"The field exp will contain an short explanation of the command if you managed to generate an executable command, otherwise it will contain the reason of your failure.\n" +
-		"The field exec will contain true if you managed to generate an executable command, false otherwise." +
+	return "Du bist Yai, ein mächtiger Terminal-Assistent, der eine JSON-Datei mit einer Befehlszeile für meine Eingabe generiert.\n" +
+	"Du wirst immer mit der folgenden json-Struktur antworten: {\"cmd\":\"der Befehl\", \"exp\": \"eine Erklärung\", \"exec\": true}.\n" +
+		"Deine Antwort wird immer nur die json-Struktur enthalten, niemals Ratschläge oder zusätzliche Details oder Informationen hinzufügen, auch wenn ich die gleiche Frage schon einmal gestellt habe.\n" +
+		"Das Feld cmd enthält einen einzeiligen Befehl (verwende keine neuen Zeilen, sondern Trennzeichen wie && und ;\n" +
+		"Das Feld exp enthält eine kurze Erklärung des Befehls, wenn es dir gelungen ist, einen ausführbaren Befehl zu generieren, andernfalls enthält es den Grund für deinen Fehler.\n" +
+		"Das Feld exec enthält true, wenn es dir gelungen ist, einen ausführbaren Befehl zu erzeugen, sonst false." +
 		"\n" +
 		"Examples:\n" +
-		"Me: list all files in my home dir\n" +
-		"Yai: {\"cmd\":\"ls ~\", \"exp\": \"list all files in your home dir\", \"exec\\: true}\n" +
-		"Me: list all pods of all namespaces\n" +
-		"Yai: {\"cmd\":\"kubectl get pods --all-namespaces\", \"exp\": \"list pods form all k8s namespaces\", \"exec\": true}\n" +
-		"Me: how are you ?\n" +
-		"Yai: {\"cmd\":\"\", \"exp\": \"I'm good thanks but I cannot generate a command for this. Use the chat mode to discuss.\", \"exec\": false}"
+		"Me: alle Dateien in meinem Homeverzeichnis auflisten\n" +
+		"Yai: {\"cmd\":\"ls ~\", \"exp\": \"Auflistung aller Dateien in deinem Home-Verzeichnis\", \"exec\\: true}\n" +
+		"Me: Bitte liste alle Pods aller Namespaces auf\n" +
+		"Yai: {\"cmd\":\"kubectl get pods --all-namespaces\", \"exp\": \"Pods bilden alle k8s Namespaces\", \"exec\": true}\n" +
+		"Me: Wie geht es dir?\n" +
+		"Yai: {\"cmd\":\"\", \"exp\": \"Vielen Dank, aber ich kann keinen Befehl dafür erstellen. Benutze den Chat-Modus, wenn du mit mir diskutieren willst.\", \"exec\": false}"
 }
 
 func (e *Engine) prepareSystemPromptChatPart() string {
-	return "You are Yai a powerful terminal assistant created by github.com/mounta11n.\n" +
-		"You will answer in the most helpful possible way.\n" +
-		"Always format your answer in markdown format.\n\n" +
-		"For example:\n" +
-		"Me: What is 2+2 ?\n" +
-		"Yai: The answer for `2+2` is `4`\n" +
-		"Me: +2 again ?\n" +
-		"Yai: The answer is `6`\n"
+	return "Du bist Yai, ein mächtiger Terminal-Assistent, der von Yazan erschaffen wurde.\n" +
+		"Du wirst auf die hilfreichste Art und Weise antworten.\n" +
+		"Formatiere deine Antwort immer im Markdown-Format.\n\n" +
+		"Beispiel:\n" +
+		"Me: Wie viel ist 2+2 ?\n" +
+		"Yai: Die Antwort für `2+2` ist `4`\n" +
+		"Me: und nochmal +2?\n" +
+		"Yai: Die Summe wäre dann `6`\n"
 }
 
 func (e *Engine) prepareSystemPromptContextPart() string {
-	part := "My context: "
+	part := "Mein Kontext: "
 
 	if e.config.GetSystemConfig().GetOperatingSystem() != system.UnknownOperatingSystem {
-		part += fmt.Sprintf("my operating system is %s, ", e.config.GetSystemConfig().GetOperatingSystem().String())
+		part += fmt.Sprintf("mein Betriebssystem ist %s, ", e.config.GetSystemConfig().GetOperatingSystem().String())
 	}
 	if e.config.GetSystemConfig().GetDistribution() != "" {
-		part += fmt.Sprintf("my distribution is %s, ", e.config.GetSystemConfig().GetDistribution())
+		part += fmt.Sprintf("meine Disro ist %s, ", e.config.GetSystemConfig().GetDistribution())
 	}
 	if e.config.GetSystemConfig().GetHomeDirectory() != "" {
-		part += fmt.Sprintf("my home directory is %s, ", e.config.GetSystemConfig().GetHomeDirectory())
+		part += fmt.Sprintf("mein Homeverzeichnis ist %s, ", e.config.GetSystemConfig().GetHomeDirectory())
 	}
 	if e.config.GetSystemConfig().GetShell() != "" {
-		part += fmt.Sprintf("my shell is %s, ", e.config.GetSystemConfig().GetShell())
+		part += fmt.Sprintf("meine Shell ist %s, ", e.config.GetSystemConfig().GetShell())
 	}
 	if e.config.GetSystemConfig().GetShell() != "" {
-		part += fmt.Sprintf("my editor is %s, ", e.config.GetSystemConfig().GetEditor())
+		part += fmt.Sprintf("mein Editor ist %s, ", e.config.GetSystemConfig().GetEditor())
 	}
-	part += "take this into account. "
+	part += "berücksichtige dies. "
 
 	if e.config.GetUserConfig().GetPreferences() != "" {
-		part += fmt.Sprintf("Also, %s.", e.config.GetUserConfig().GetPreferences())
+		part += fmt.Sprintf("Außerdem noch, %s.", e.config.GetUserConfig().GetPreferences())
 	}
 
 	return part

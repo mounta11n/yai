@@ -9,14 +9,18 @@ import (
 )
 
 var loadingMessages = []string{
-	"let me think",
-	"let me see",
-	"thinking",
-	"loading",
-	"hold on",
-	"calculating",
-	"processing",
-	"please wait",
+	"Lass Mich Kurz Überlegen ...",
+	"Kleinen Moment ...",
+	"Am Nachdenken ...",
+	"Am Laden ...",
+	"Neuronen Feuern ...",
+	"Synapsen Arbeiten ...",
+	"Sekunde Bitte ...",
+	"Am Berechnen ...",
+	"Am Verarbeiten ...",
+	"Bitte Warten ...",
+	"Neuronen Feuern ...",
+	"Synapsen Arbeiten ...",
 }
 
 type Spinner struct {

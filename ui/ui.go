@@ -266,7 +266,7 @@ func (u *Ui) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		default:
 			if u.state.confirming {
-				if strings.ToLower(msg.String()) == "y" {
+				if strings.ToLower(msg.String()) == "j" {
 					u.state.confirming = false
 					u.state.executing = true
 					u.state.buffer = ""
@@ -315,7 +315,7 @@ func (u *Ui) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			u.state.confirming = true
 			u.state.command = msg.GetCommand()
 			output = u.components.renderer.RenderContent(fmt.Sprintf("`%s`", u.state.command))
-			output += fmt.Sprintf("  %s\n\n  confirm execution? [y/N]", u.components.renderer.RenderHelp(msg.GetExplanation()))
+			output += fmt.Sprintf("  %s\n\n  möchtest du beenden? [j/N]", u.components.renderer.RenderHelp(msg.GetExplanation()))
 			u.components.prompt.Blur()
 		} else {
 			output = u.components.renderer.RenderContent(msg.GetExplanation())
@@ -442,7 +442,7 @@ func (u *Ui) startRepl(config *config.Config) tea.Cmd {
 			}
 
 			u.engine = engine
-			u.state.buffer = "Welcome \n\n"
+			u.state.buffer = "Willkommen \n\n"
 			u.state.command = ""
 			u.components.prompt = NewPrompt(u.state.promptMode)
 
