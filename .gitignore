@@ -1,5 +1,6 @@
 .idea
 coverage.txt
 debug.log
+*-yai
 dist/
 docs/Gemfile.lock

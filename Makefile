@@ -2,7 +2,10 @@ build:
 	go build -o yai
 
 install:
-	chmod +x yai && mv yai ~/.local/bin/
+	chmod +x yai && sudo mv yai /usr/bin/yai
+
+sss:
+	chmod +x yai && sudo mv yai /usr/bin/yai && sudo cp /usr/bin/yai /usr/bin/sss-yai
 
 uninstall:
-	rm ~/.local/bin/yai && rm ~/.config/yai.json
+	rm /usr/bin/yai && rm ~/.config/yai.json

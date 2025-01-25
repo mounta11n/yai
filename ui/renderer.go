@@ -30,10 +30,10 @@ func NewRenderer(options ...glamour.TermRendererOption) *Renderer {
 		return nil
 	}
 
-	successRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(success_color)).Background(lipgloss.Color(background))
-	warningRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(warning_color)).Background(lipgloss.Color(background))
-	errorRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(error_color)).Background(lipgloss.Color(background))
-	helpRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(help_color)).Italic(true).Background(lipgloss.Color(background))
+	successRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(success_color))
+	warningRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(warning_color))
+	errorRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(error_color))
+	helpRenderer := lipgloss.NewStyle().Foreground(lipgloss.Color(help_color))
 
 	return &Renderer{
 		contentRenderer: contentRenderer,

@@ -88,7 +88,7 @@ func GetTheme() []byte {
     "prefix": " ",
     "suffix": " ",
     "color": "#ffaa00",
-    "background_color": "#262427"
+    "background_color": "#282C34"
   },
   "code_block": {
     "color": "#55557f",
