@@ -67,7 +67,7 @@ func WriteConfig(key string, write bool) (*Config, error) {
 	viper.SetDefault(openai_max_tokens, 1000)
 
 	// user defaults
-	viper.SetDefault(user_default_prompt_mode, "chat")
+	viper.SetDefault(user_default_prompt_mode, "exec")
 	viper.SetDefault(user_preferences, "")
 
 	if write {

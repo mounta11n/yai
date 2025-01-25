@@ -6,7 +6,6 @@ import (
 )
 
 const (
-	background    = "#282C34"
 	exec_color    = "#FFFF00"
 	config_color  = "#00D7FF"
 	chat_color    = "#55FF00"

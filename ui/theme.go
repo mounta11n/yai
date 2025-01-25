@@ -7,7 +7,6 @@ func GetTheme() []byte {
     "block_prefix": "\n",
     "block_suffix": "\n",
     "color": "#FFFFFF",
-    "background_color": "#282C34",
     "margin": 2
   },
   "block_quote": {
@@ -87,8 +86,7 @@ func GetTheme() []byte {
   "code": {
     "prefix": " ",
     "suffix": " ",
-    "color": "#ffaa00",
-    "background_color": "#282C34"
+    "color": "#ffaa00"
   },
   "code_block": {
     "color": "#55557f",
@@ -176,9 +174,6 @@ func GetTheme() []byte {
       },
       "generic_subheading": {
         "color": "#767676"
-      },
-      "background": {
-        "background_color": "#282C34"
       }
     }
   },

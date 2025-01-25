@@ -10,11 +10,11 @@ import (
 
 const (
 	exec_icon          = " >_ "
-	exec_placeholder   = "Führe einen Befehl aus"
+	exec_placeholder   = "  ...Lasse deine KI einen Befehl ausführen..."
 	config_icon        = " ? "
 	config_placeholder = "Gib deinen API Schlüssel ein"
-	chat_icon          = " … "
-	chat_placeholder   = "Was möchtest du wissen?"
+	chat_icon          = " @: "
+	chat_placeholder   = "  ...Chatte mit deiner KI..."
 )
 
 type Prompt struct {
@@ -96,11 +96,11 @@ func (p *Prompt) AsString() string {
 func getPromptStyle(mode PromptMode) lipgloss.Style {
 	switch mode {
 	case ExecPromptMode:
-		return lipgloss.NewStyle().Foreground(lipgloss.Color(exec_color)).Background(lipgloss.Color(background))
+		return lipgloss.NewStyle().Foreground(lipgloss.Color(exec_color))
 	case ConfigPromptMode:
-		return lipgloss.NewStyle().Foreground(lipgloss.Color(config_color)).Background(lipgloss.Color(background))
+		return lipgloss.NewStyle().Foreground(lipgloss.Color(config_color))
 	default:
-		return lipgloss.NewStyle().Foreground(lipgloss.Color(chat_color)).Background(lipgloss.Color(background))
+		return lipgloss.NewStyle().Foreground(lipgloss.Color(chat_color))
 	}
 }
 
